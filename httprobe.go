@@ -9,11 +9,12 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"strings"
 	"time"
 )
 
 const (
-	ProgName  = "httprobe"
+	ProgName = "httprobe"
 )
 
 var (
@@ -92,6 +93,6 @@ func makeRequest() error {
 
 func main() {
 	log.Default().SetFlags(log.Ldate | log.Ltime | log.Lmicroseconds | log.Lshortfile)
-	log.Default().SetPrefix("HTTPTEST: ")
+	log.Default().SetPrefix(strings.ToUpper(ProgName) + ": ")
 	os.Exit(run())
 }

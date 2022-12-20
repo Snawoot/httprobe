@@ -14,7 +14,6 @@ import (
 
 const (
 	ProgName  = "httprobe"
-	ReadLimit = 64 * 1024
 )
 
 var (

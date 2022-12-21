@@ -59,6 +59,7 @@ func makeRequest() error {
 	}
 
 	transport := &http.Transport{
+		DialContext:           NewLoggingDialer().DialContext,
 		Proxy:                 http.ProxyFromEnvironment,
 		ForceAttemptHTTP2:     true,
 		MaxIdleConns:          100,
